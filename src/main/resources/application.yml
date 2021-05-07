@@ -10,3 +10,8 @@ keycloak:
     secret: ccf4955c-b206-4b78-80b1-139aac3393c4
   use-resource-role-mappings: true
   bearer-only: true
+
+logging:
+  level:
+    root: INFO
+    com.psc.sample.keycloak: DEBUG
