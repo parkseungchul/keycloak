@@ -27,7 +27,7 @@ curl -X GET "http://localhost:8000/test/admin" ^
 #### keycloak download
 - https://www.keycloak.org/downloads
 
-####keycloak 설정
+#### keycloak 설정
 1. realm 만들기
 2. client 만들고 내부에 ROLE 생성하기
     - ROLE_ADMIN (실제 스프링에서 ADMIN 권한 맵핑)
