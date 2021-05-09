@@ -35,3 +35,35 @@ curl -X GET "http://localhost:8000/test/admin" ^
 3. user 만들고 이전에 만들 ROLE 맵핑하기
     - user 에 여러 권한 맵핑이 가능
 
+#### Docker Keycloak MariaDB 
+<pre><code>
+docker network create keycloak-network
+docker run -d --name mariadb_keycloak \
+-e  DB_ADDR=mariadb_keycloak \
+-v /app/mysql2:/var/lib/mysql \
+--net keycloak-network \
+-e MYSQL_ROOT_PASSWORD=password \
+-e MYSQL_DATABASE=keycloak \
+-e MYSQL_USER=keycloak \
+-e MYSQL_PASSWORD=password \
+mariadb
+
+docker run -d -p 8888:8080 \
+--name keycloak  \
+-e DB_VENDOR=mariadb \
+-e DB_ADDR=mariadb_keycloak \
+-e KEYCLOAK_USER=admin \
+-e KEYCLOAK_PASSWORD=admin \
+--net keycloak-network \
+jboss/keycloak
+</code></pre>
+
+#### 리모트에서 붙기 옵션
+-b 0.0.0.0 
+
+#### user 만들기
+./add-user-keycloak.sh -u admin -p admin
+
+#### 포트 8080 + 808 = 8888 포트로 접속됨 
+-Djboss.socket.binding.port-offset=808
+
