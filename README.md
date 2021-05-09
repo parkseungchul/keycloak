@@ -1,6 +1,6 @@
 ## youtube 강의 영상 소스
-- J204. Spring Boot + Security + JWT + keycloak
-- https://youtu.be/gEJpwogGbHw
+### 강의 제목: J204. Spring Boot + Security + JWT + keycloak
+### 강의 주소: https://youtu.be/gEJpwogGbHw
 
 ### curl test
 <pre><code>
@@ -35,7 +35,11 @@ curl -X GET "http://localhost:8000/test/admin" ^
 3. user 만들고 이전에 만들 ROLE 맵핑하기
     - user 에 여러 권한 맵핑이 가능
 
-### Docker + Keycloak + MariaDB 
+
+## youtube 강의 영상 소스
+### 강의 제목: Docker +  Keycloak + MariaDB
+### 강의 주소: https://youtu.be/hGYJ5H3tIZk
+
 <pre><code>
 docker network create keycloak-network
 
